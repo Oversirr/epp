@@ -11,6 +11,12 @@ namespace GameStore.Web
             routes.IgnoreRoute("{resource}.axd/{*pathInfo}");
 
             routes.MapRoute(
+                name: "Game Details",
+                url: "game/{key}",
+                defaults: new { controller = "Games", action = "GetGameDetails", key = UrlParameter.Optional }
+            );
+
+            routes.MapRoute(
                             name: "Games",
                             url: "games",
                             defaults: new { controller = "Games", action = "GetAllGames" }
