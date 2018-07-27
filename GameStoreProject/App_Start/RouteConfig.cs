@@ -1,4 +1,5 @@
-﻿using System.Web.Mvc;
+﻿using System;
+using System.Web.Mvc;
 using System.Web.Routing;
 
 namespace GameStore.Web
@@ -14,6 +15,13 @@ namespace GameStore.Web
                 url: "{controller}/{action}/{id}",
                 defaults: new { controller = "Home", action = "Index", id = UrlParameter.Optional }
             );
+
+            routes.MapRoute(
+                name: "Games",
+                url: "games",
+                defaults: new {controller = "Games", action = "GetAllGames"}
+            );
+
         }
     }
 }

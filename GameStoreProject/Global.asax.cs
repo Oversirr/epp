@@ -8,6 +8,7 @@ namespace GameStore.Web
     {
         protected void Application_Start()
         {
+            AutofacConfig.ConfigureContainer();
             AreaRegistration.RegisterAllAreas();
             RouteConfig.RegisterRoutes(RouteTable.Routes);
             AutoMapperConfig.Register();
