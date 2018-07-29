@@ -5,12 +5,12 @@ namespace GameStore.Services.Interfaces
 {
     public interface IGameServices
     {
-        void CreateNewGame (GameDTO game);
-        void EditGame (GameDTO game);
-        void DeleteGame (GameDTO game);
-        GameDTO GetGameByKey (string key);
-        IEnumerable<GameDTO> GetGames();
-        IEnumerable<GameDTO> GetGamesByGenre (GenreDTO genre);
-        IEnumerable<GameDTO> GetGamesByPlatformType (PlatformDTO platform);
+        void CreateNewGame (GameCreateDTO game);
+        void EditGame(GameEditDTO game);
+        void DeleteGame(GameEditDTO game);
+        GameShowDTO GetGameByKey (string key);
+        IEnumerable<GameShowDTO> GetGames();
+        IEnumerable<GameShowDTO> GetGamesByGenre (GenreDTO genre);
+        IEnumerable<GameShowDTO> GetGamesByPlatformType (PlatformDTO platform);
     }
 }

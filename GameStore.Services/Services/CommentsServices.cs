@@ -34,7 +34,7 @@ namespace GameStore.Services.Services
             _unitOfWork.Commit();
         }
 
-        public void AddCommentToGame(GameDTO game, CommentDTO comment)
+        public void AddCommentToGame(GameShowDTO game, CommentDTO comment)
         {
             var commentToAdd = new Comment(); //PH until map comment here
             var targetGame = new Game();

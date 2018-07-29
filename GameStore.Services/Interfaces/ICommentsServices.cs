@@ -7,7 +7,7 @@ namespace GameStore.Services.Interfaces
     {
         void EditComment(CommentDTO comment);
         void DeleteComment(CommentDTO comment);
-        void AddCommentToGame(GameDTO game, CommentDTO comment);
+        void AddCommentToGame(GameShowDTO game, CommentDTO comment);
         void AddReplyToComment(CommentDTO comment, CommentDTO parent);
         IEnumerable<CommentDTO> GetCommentsByGameKey(string gamekey);
     }

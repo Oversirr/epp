@@ -1,6 +1,7 @@
 ﻿using System.Web.Mvc;
 using Autofac;
 using Autofac.Integration.Mvc;
+using GameStore.Services.DTO;
 using GameStore.Services.Interfaces;
 using GameStore.Services.Services;
 
@@ -21,6 +22,9 @@ namespace GameStore.Web.Infrastructure
             builder.RegisterType<CommentsServices>().As<ICommentsServices>();
             builder.RegisterType<GenreServices>().As<IGenreServices>();
             builder.RegisterType<PlatformServices>().As<IPlatformServices>();
+            builder.RegisterType<GameCreateDTO>().As<IGameDTO>();
+            builder.RegisterType<GameEditDTO>().As<IGameDTO>();
+            builder.RegisterType<GameShowDTO>().As<IGameDTO>();
 
             // создаем новый контейнер с теми зависимостями, которые определены выше
             var container = builder.Build();

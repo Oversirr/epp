@@ -11,7 +11,12 @@ namespace GameStore.Web.Infrastructure
             CreateMap<Comment, CommentDTO>();
             CreateMap<Genre, GenreDTO>();
             CreateMap<PlatformType, PlatformDTO>();
-            CreateMap<Game, GameDTO>();
+            CreateMap<Game, GameShowDTO>();
+            CreateMap<Game, GameCreateDTO>().ReverseMap();
+            CreateMap<GenreDTO, Genre>().ForMember(i => i.Games, opt => opt.Ignore())
+                .ForMember(dest => dest.ParentGenre, opt => opt.Ignore());
+            CreateMap<PlatformType, PlatformDTO>().ReverseMap().ForMember(i => i.Games, opt => opt.Ignore());
+            CreateMap<Game, GameEditDTO>().ReverseMap();
         }
 
         public static void Register()
